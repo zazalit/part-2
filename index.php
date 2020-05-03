@@ -1,10 +1,8 @@
 <?php
 
-//
-
-
 require_once "Vehicle.php";
 include('Bicycle.php');
+require_once 'LightableInterface.php';
 
 // BICYCLE
 
@@ -14,9 +12,11 @@ $bike = new Bicycle('red', '8');
 //forward and brake
 echo $bike->forward() . '<br>';
 echo ' The bicycle speed is: ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
+echo 'The lights are on : ' . $bike->switchOn() . '<br>';
 echo $bike->brake() . '<br>';
 echo ' The bicycle speed is: ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-echo "" . "<br>";
+echo 'The lights are off' .$bike->switchOn();
+echo "<br>";
 
 // CAR
 
@@ -28,11 +28,14 @@ $simpsomsCar -> setCurrentSpeed(0);
 $simpsomsCar -> setNbWheels(4);
 $simpsomsCar -> setenergyLevel(50);
 
+
 //start, forward and brake
 echo $simpsomsCar->forward(). '<br>';
 echo ' The speed of the car is: ' .$simpsomsCar->getCurrentSpeed() . ' km/h' . '<br>';
+echo 'The lights are on: ' . $simpsomsCar->switchOn() . "<br>";
 echo $simpsomsCar->brake(). '<br>';
 echo 'The speed of the car is: ' .$simpsomsCar->getCurrentSpeed() . ' km/h' . '<br>';
+echo 'The lights are off' . $simpsomsCar->switchOff() . "<br>";
 echo '<br>';
 
 //TRUCK
@@ -45,4 +48,7 @@ $truck->setloading(500);
 echo $truck->forward(). '<br>';
 echo 'The storage truck is: ' .$truck->loading() .  '<br>';
 echo $simpsomsCar->brake();
+
+include ('MotorWay.php');
+
 
