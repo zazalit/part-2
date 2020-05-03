@@ -29,6 +29,20 @@ $simpsomsCar -> setNbWheels(4);
 $simpsomsCar -> setenergyLevel(50);
 
 
+try {
+    $simpsomsCar->start();
+} 
+catch (Exception $exception) {
+    echo 'Exception received : ' . $exception->getMessage() . '<br>';
+    $simpsomsCar->setParkBrake(false);
+} 
+
+finally {
+    echo 'Ma voiture roule comme un donut';
+}
+
+echo "<br>";
+
 //start, forward and brake
 echo $simpsomsCar->forward(). '<br>';
 echo ' The speed of the car is: ' .$simpsomsCar->getCurrentSpeed() . ' km/h' . '<br>';
@@ -37,6 +51,7 @@ echo $simpsomsCar->brake(). '<br>';
 echo 'The speed of the car is: ' .$simpsomsCar->getCurrentSpeed() . ' km/h' . '<br>';
 echo 'The lights are off' . $simpsomsCar->switchOff() . "<br>";
 echo '<br>';
+
 
 //TRUCK
 
@@ -55,5 +70,3 @@ require 'Speedometer.php';
 echo Speedometer::convertKm(10);
 echo '<br>';
 echo Speedometer::convertMiles(120);
-
-
