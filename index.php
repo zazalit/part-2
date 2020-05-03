@@ -48,7 +48,12 @@ $truck->setloading(500);
 echo $truck->forward(). '<br>';
 echo 'The storage truck is: ' .$truck->loading() .  '<br>';
 echo $simpsomsCar->brake();
+echo "<br>";
 
-include ('MotorWay.php');
+require 'Speedometer.php';
+
+echo Speedometer::convertKm(10);
+echo '<br>';
+echo Speedometer::convertMiles(120);
 
 
